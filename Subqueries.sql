@@ -1,4 +1,4 @@
-**Query 1: Average Total Amount Paid for Top 5 Customers in Selected Cities**
+-- Query 1: Average Total Amount Paid for Top 5 Customers in Selected Cities
 
 SELECT
     AVG(total_amount_paid) AS "average"
@@ -19,9 +19,10 @@ FROM
     LIMIT 5
 ) AS total_amount_paid_alias;
 
-Explanation: This query calculates the average total amount paid for the top 5 customers in selected cities. It uses a subquery to find the total amount paid by each customer in the specified cities, orders them by the total amount paid in descending order, and limits the results to the top 5. The outer query then calculates the average of these total amounts.
+-- Explanation: This query calculates the average total amount paid for the top 5 customers in selected cities. It uses a subquery to find the total amount paid by each customer in the specified cities, orders them by the total amount paid in descending order, and limits the results to the top 5. The outer query then calculates the average of these total amounts.
 
 -- Query 2: Customer Counts in Each Country, Including Top 5 Customers
+
 SELECT
     D.country,
     COUNT(A.customer_id) AS all_customer_count,
@@ -52,4 +53,5 @@ ON A.customer_id = top_5_customers.customer_id
 GROUP BY D.country
 ORDER BY all_customer_count DESC;
 
-Explanation: This query retrieves customer counts in each country, including counts of the top 5 customers based on their total amount paid. It utilizes a left join with a subquery that identifies the top 5 customers in specified cities based on their total amount paid. The results are grouped by country, and the counts are ordered in descending order of all customers.
+-- Explanation: This query retrieves customer counts in each country, including counts of the top 5 customers based on their total amount paid. It utilizes a left join with a subquery that identifies the top 5 customers in specified cities based on their total amount paid. The results are grouped by country, and the counts are ordered in descending order of all customers.
+
