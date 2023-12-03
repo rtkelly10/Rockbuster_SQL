@@ -1,4 +1,4 @@
-**Query 1: Top 10 countries by customer count**
+-- Query 1: Top 10 countries by customer count
 SELECT D.country AS country_name,
        COUNT(A.customer_id) AS customer_count
 FROM customer A
@@ -11,7 +11,7 @@ LIMIT 10;
 
 -- Explanation: The query efficiently retrieves the top 10 countries based on customer count using inner joins between the customer, address, city, and country tables.
 
-**Query 2: Top 10 cities in selected countries by customer count**
+-- Query 2: Top 10 cities in selected countries by customer count
 SELECT D.country AS country_name,
        C.city AS city_name,
        COUNT(A.customer_id) AS number_of_customers
@@ -26,8 +26,7 @@ LIMIT 10;
 
 -- Explanation: This query retrieves the top 10 cities in selected countries based on customer count, utilizing inner joins and filtering results for specific countries.
 
-**Query 3: Top 5 customers by total amount paid in selected cities**
-
+-- Query 3: Top 5 customers by total amount paid in selected cities
 SELECT A.customer_id AS customer_id,
        A.first_name AS customer_first_name,
        A.last_name AS customer_last_name,
